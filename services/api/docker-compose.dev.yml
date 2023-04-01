@@ -10,3 +10,10 @@ services:
     volumes:
       - .:/usr/app
 
+  caddy:
+    image: caddy:2
+    ports:
+      - 80:80
+    volumes:
+      - ./caddy/Caddyfile.json:/etc/caddy/Caddyfile.json
+    command: caddy run --config /etc/caddy/Caddyfile.json
